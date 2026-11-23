@@ -1,6 +1,6 @@
-# Screenshot Bulk Rename
+# Screenshot and Recording Renamer
 
-A small Python desktop app (Tkinter) that renames a folder of screenshots by the date and time they were taken.
+A small Python desktop app (Tkinter) that renames a folder of screenshots and screen recordings by the date and time they were taken.
 
 ```
 Screenshot 2026-11-10 113915.png  -->  2026-11-10 11.39.15_001.png
@@ -22,12 +22,12 @@ Screenshot 2026-11-11 092028.png  -->  2026-11-11 09.20.28_001.png
 
 ## Usage
 ```bash
-python "Screenshot Bulk Rename.py"
+python "Screenshot and Recording Renamer.py"
 ```
-1. Click **Choose Folder** and pick your screenshots folder.
+1. Click **Choose Folder** and pick your screenshots or recordings folder.
 2. Check the preview.
 3. Click **Rename Files** and confirm.
 
 Tip: try it on a folder of copies first.
 
-Currently renames `.png` files only.
+Renames `.png` screenshots and `.mp4` recordings (any letter case, e.g. `.PNG`).
