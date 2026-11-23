@@ -114,7 +114,7 @@ def rename_files():
 # ---- Window setup ----
 window = tk.Tk()
 window.title("Screenshot & Recording Renamer")
-window.geometry("800x500")  # width x height in pixels
+window.geometry("450x280")  # width x height in pixels
 
 label = tk.Label(window, text="Screenshot & Recording Renamer")  # also used for status messages
 label.pack()
