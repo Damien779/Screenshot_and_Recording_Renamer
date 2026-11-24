@@ -1,6 +1,6 @@
 # Screenshot and Recording Renamer
 
-A small Python desktop app (Tkinter) that renames a folder of screenshots and screen recordings by the date and time they were taken.
+A small Python desktop app (Tkinter) that renames screenshots and screen recordings by the date and time they were taken. It can search one folder, or a main folder and all of its subfolders (for example, a tickets folder with one subfolder per ticket).
 
 ```
 Screenshot 2026-11-10 113915.png  -->  2026-11-10 11.39.15_001.png
@@ -8,10 +8,22 @@ Screenshot 2026-11-10 114423.png  -->  2026-11-10 11.44.24_002.png
 Screenshot 2026-11-11 092028.png  -->  2026-11-11 09.20.28_001.png
 ```
 
+With subfolders, the preview shows where each file is:
+
+```
+Ticket 101\Screenshot 2026-11-10 113915.png  -->  2026-11-10 11.39.15_001.png
+Ticket 101\clip.mp4                          -->  2026-11-10 11.41.02_002.mp4
+Ticket 102\Screenshot 2026-11-11 092028.png  -->  2026-11-11 09.20.28_001.png
+```
+
 ## Features
 - Renames `.png` screenshots and `.mp4` screen recordings (any letter case, like `.PNG` or `.MP4`); other files are left alone
-- Screenshots and recordings share one counter per day, so they stay in time order
-- Pick a folder with a dialog and preview every `old --> new` name before anything changes
+- **Include subfolders** (on by default): searches the folder you pick and every folder inside it, at any depth. Untick it to rename only the files in that one folder
+- Files are renamed where they are; nothing is moved between folders
+- Screenshots and recordings share one counter per day, per folder, so they stay in time order
+- Hidden folders (names starting with a dot, like `.git`) are skipped
+- **Instructions** button opens a window that explains how to use the app
+- Pick a folder with a dialog and preview every `old --> new` name (with its subfolder) before anything changes
 - Sorts files by date modified; numbering restarts at `001` each day
 - Safe two-pass rename (via temporary names), so new names never collide with existing ones
 - Running it again on already-renamed files changes nothing
@@ -26,9 +38,12 @@ Screenshot 2026-11-11 092028.png  -->  2026-11-11 09.20.28_001.png
 ```bash
 python "Screenshot and Recording Renamer.py"
 ```
-1. Click **Choose Folder** and pick your screenshots or recordings folder.
-2. Check the preview.
-3. Click **Rename Files** and confirm.
+1. Leave **Include subfolders** ticked to search every folder inside the one you pick, or untick it for just that folder. Changing it after choosing a folder updates the preview.
+2. Click **Choose Folder** and pick your screenshots or recordings folder (or the main folder that holds them).
+3. Check the preview. Nothing has changed yet.
+4. Click **Rename Files** and confirm.
+
+Click **Instructions** any time for a quick how-to.
 
 Tip: try it on a folder of copies first.
 
